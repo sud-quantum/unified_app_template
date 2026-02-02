@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}Home - {{ app_name }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Welcome Section -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card border-0 shadow-sm bg-gradient-primary text-white">
+                <div class="card-body p-5">
+                    <h1 class="display-4 fw-bold mb-3">
+                        <i class="bi bi-emoji-smile me-3"></i>Welcome, {{ username }}!
+                    </h1>
+                    <p class="lead mb-0">You're successfully logged into {{ app_name }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feature Cards -->
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm hover-card">
+                <div class="card-body p-4">
+                    <div class="feature-icon bg-primary bg-gradient text-white rounded-3 mb-3">
+                        <i class="bi bi-speedometer2"></i>
+                    </div>
+                    <h5 class="card-title fw-bold">Dashboard</h5>
+                    <p class="card-text text-muted">
+                        View your personalized dashboard with real-time analytics and insights.
+                    </p>
+                    <a href="#" class="btn btn-outline-primary"
+                        onclick="showToast('Dashboard feature coming soon!', 'info'); return false;">
+                        Explore <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm hover-card">
+                <div class="card-body p-4">
+                    <div class="feature-icon bg-success bg-gradient text-white rounded-3 mb-3">
+                        <i class="bi bi-graph-up"></i>
+                    </div>
+                    <h5 class="card-title fw-bold">Analytics</h5>
+                    <p class="card-text text-muted">
+                        Track performance metrics and gain valuable business intelligence.
+                    </p>
+                    <a href="#" class="btn btn-outline-success"
+                        onclick="showToast('Analytics feature coming soon!', 'info'); return false;">
+                        View Stats <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm hover-card">
+                <div class="card-body p-4">
+                    <div class="feature-icon bg-warning bg-gradient text-white rounded-3 mb-3">
+                        <i class="bi bi-gear"></i>
+                    </div>
+                    <h5 class="card-title fw-bold">Settings</h5>
+                    <p class="card-text text-muted">
+                        Customize your experience and manage your account preferences.
+                    </p>
+                    <a href="#" class="btn btn-outline-warning"
+                        onclick="showToast('Settings feature coming soon!', 'info'); return false;">
+                        Configure <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Demo Section -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <h4 class="fw-bold mb-4">
+                        <i class="bi bi-bell me-2"></i>Toast Notification Demo
+                    </h4>
+                    <p class="text-muted mb-4">Click the buttons below to test different toast notification types:</p>
+                    <div class="btn-group" role="group">
+                        <button class="btn btn-success"
+                            onclick="showToast('Operation completed successfully!', 'success')">
+                            <i class="bi bi-check-circle me-1"></i>Success
+                        </button>
+                        <button class="btn btn-danger" onclick="showToast('An error occurred!', 'error')">
+                            <i class="bi bi-x-circle me-1"></i>Error
+                        </button>
+                        <button class="btn btn-warning" onclick="showToast('Please be careful!', 'warning')">
+                            <i class="bi bi-exclamation-triangle me-1"></i>Warning
+                        </button>
+                        <button class="btn btn-info" onclick="showToast('Here is some information.', 'info')">
+                            <i class="bi bi-info-circle me-1"></i>Info
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,395 @@
+/* ===================================
+   Custom Corporate Theme Styles
+   =================================== */
+
+/* CSS Variables for Light Theme */
+:root {
+    /* Corporate Colors - Electric Purple Palette */
+    --primary-color: #8C00FF;
+    --primary-light: #a64dff;
+    --primary-dark: #6600cc;
+    --secondary-color: #2c3e50;
+    --accent-color: #00d4ff;
+
+    /* Neutral Colors */
+    --bg-color: #f5f7fa;
+    --surface-color: #ffffff;
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --border-color: #dee2e6;
+
+    /* Status Colors */
+    --success-color: #2e7d32;
+    --warning-color: #f57c00;
+    --error-color: #c62828;
+    --info-color: #0277bd;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark Theme Variables */
+[data-bs-theme="dark"] {
+    --primary-color: #a64dff;
+    --primary-light: #bf80ff;
+    --primary-dark: #8C00FF;
+    --secondary-color: #34495e;
+    --accent-color: #00d4ff;
+
+    --bg-color: #1a1a1a;
+    --surface-color: #2d2d2d;
+    --text-primary: #e0e0e0;
+    --text-secondary: #9e9e9e;
+    --border-color: #404040;
+
+    --success-color: #66bb6a;
+    --warning-color: #ffa726;
+    --error-color: #ef5350;
+    --info-color: #29b6f6;
+
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Global Styles */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+main {
+    flex: 1;
+}
+
+/* Bootstrap Overrides */
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Card Styles */
+.card {
+    background-color: var(--surface-color);
+    border-color: var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.hover-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg) !important;
+}
+
+.auth-card {
+    backdrop-filter: blur(10px);
+    background: linear-gradient(135deg, var(--surface-color) 0%, rgba(255, 255, 255, 0.9) 100%);
+}
+
+[data-bs-theme="dark"] .auth-card {
+    background: linear-gradient(135deg, var(--surface-color) 0%, rgba(45, 45, 45, 0.9) 100%);
+}
+
+/* Split Screen Auth Layout */
+.min-vh-100 {
+    min-height: 100vh;
+}
+
+/* Auth Form Styling */
+.form-label.fw-semibold {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.form-control-lg {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+
+.form-control-lg:focus {
+    box-shadow: 0 0 0 0.25rem rgba(140, 0, 255, 0.25);
+}
+
+[data-bs-theme="dark"] .form-control-lg:focus {
+    box-shadow: 0 0 0 0.25rem rgba(166, 77, 255, 0.25);
+}
+
+/* Compact Auth Form Container */
+.auth-form-container {
+    width: 100%;
+    max-width: 380px;
+    padding: 2rem;
+    background-color: var(--surface-color);
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+}
+
+.auth-form-container h3 {
+    font-size: 1.5rem;
+}
+
+.auth-form-container .form-control {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.95rem;
+}
+
+.auth-form-container .btn {
+    padding: 0.6rem;
+}
+
+/* Gradient Background for Welcome Card */
+.bg-gradient-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+}
+
+/* Feature Icons */
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    transition: transform 0.3s ease;
+}
+
+.hover-card:hover .feature-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Header/Navbar Styles */
+.navbar {
+    backdrop-filter: blur(10px);
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-light) 100%) !important;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+/* Navigation Links */
+.nav-link {
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px);
+}
+
+/* User Dropdown Button */
+.user-dropdown-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.user-dropdown-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Breadcrumb Styles */
+.breadcrumb {
+    background-color: var(--bg-color);
+    margin-bottom: 0;
+}
+
+[data-bs-theme="dark"] .breadcrumb {
+    background-color: var(--surface-color);
+}
+
+.breadcrumb-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb-item a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+.footer {
+    margin-top: auto;
+    background-color: #212529 !important;
+}
+
+/* Form Styles */
+.form-control,
+.form-select {
+    background-color: var(--surface-color);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: var(--surface-color);
+    border-color: var(--primary-color);
+    color: var(--text-primary);
+    box-shadow: 0 0 0 0.25rem rgba(140, 0, 255, 0.25);
+}
+
+[data-bs-theme="dark"] .form-control:focus,
+[data-bs-theme="dark"] .form-select:focus {
+    box-shadow: 0 0 0 0.25rem rgba(166, 77, 255, 0.25);
+}
+
+/* Toast Notifications */
+.toast {
+    backdrop-filter: blur(10px);
+    border: none;
+    box-shadow: var(--shadow-lg);
+}
+
+.toast-success {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.toast-error {
+    background-color: var(--error-color);
+    color: white;
+}
+
+.toast-warning {
+    background-color: var(--warning-color);
+    color: white;
+}
+
+.toast-info {
+    background-color: var(--info-color);
+    color: white;
+}
+
+/* Theme Toggle Button */
+#themeToggle {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+#themeToggle:hover {
+    transform: rotate(20deg) scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeIn 0.5s ease;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    background-color: var(--surface-color);
+    border-color: var(--border-color);
+    box-shadow: var(--shadow-md);
+}
+
+.dropdown-item {
+    color: var(--text-primary);
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+}
+
+/* Alert Styles */
+.alert {
+    border-radius: 8px;
+    border: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+
+    .display-4 {
+        font-size: 2rem;
+    }
+
+    .feature-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+}
+
+/* Smooth Transitions */
+* {
+    transition-property: background-color, border-color, color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+}
+
+/* Utility Classes */
+.text-muted {
+    color: var(--text-secondary) !important;
+}
+
+.bg-light {
+    background-color: var(--bg-color) !important;
+}
+
+[data-bs-theme="dark"] .bg-light {
+    background-color: var(--surface-color) !important;
+}
